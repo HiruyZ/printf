@@ -1,4 +1,5 @@
 #include "main.h"
+
 /************************* PRINT UNSIGNED NUMBER *************************/
 
 /**
@@ -18,8 +19,6 @@ int print_hexadecimal(va_list types, char buffer[],
 		flags, 'x', width, precision, size));
 }
 
-/************* PRINT UNSIGNED NUMBER IN OCTAL  ****************/
-
 /**
  * print_hexa_upper - Prints unsigned number in upper hexadecimal notation
  * @types: Lista of arguments
@@ -36,7 +35,6 @@ int print_hexa_upper(va_list types, char buffer[],
 	return (print_hexa(types, "0123456789ABCDEF", buffer,
 		flags, 'X', width, precision, size));
 }
-/************** PRINT UNSIGNED NUMBER IN HEXADECIMAL **************/
 
 /**
  * print_unsigned - Prints unsigned number
@@ -148,13 +146,13 @@ int print_hexa(va_list types, char map_to[], char buffer[],
 		num /= 16;
 	}
 
+		buffer[x--] = map_to[num % 16];
+		num /= 16;
+	}
+
 	if (flags & F_HASH && init_num != 0)
 	{
 		buffer[x--] = flag_ch;
 		buffer[x--] = '0';
 	}
 
-	x++;
-
-	return (write_unsgnd(0, x, buffer, flags, width, precision, size));
-}
