@@ -15,7 +15,7 @@
  */
 int handle_write_char(char c, char buffer[],
 		int flags, int width, int precision, int size)
-{* char is stored at left and paddind at buffer's right */
+{/* char is stored at left and paddind at buffer's right */
 	int i = 0;
 	char padd = ' ';
 
@@ -97,6 +97,7 @@ int write_num(int ind, char buffer[],
 		int length, char padd, char extra_c)
 {
 	int i, padd_start = 1;
+
 	if (prec == 0 && ind == BUFF_SIZE - 2 && buffer[ind] == '0' && width == 0)
 		buffer[ind] = padd = ' '; /* width is displayed with padding ' ' */
 	if (prec > 0 && prec < length)
@@ -141,6 +142,8 @@ int write_num(int ind, char buffer[],
  * @flags: Flags specifiers
  * @buffer: Array of chars
  * @size: Size specifier
+ * @precision: Precision specifier
+ * @width: Width specifier
  *
  * Return: Number of written chars.
  */
@@ -192,6 +195,11 @@ int write_unsgnd(int is_negative, int ind,
  * @buffer: Arrays of chars
  * @ind: Index at which the number starts in the buffer
  * @length: Length of number
+ * @width: Width specifier
+ * @flags: Flags specifier
+ * @padd: Char representing the padding
+ * @extra_c: Char representing extra char
+ * @padd_start: Index at which padding should start
  *
  * Return: Number of written chars.
  */
