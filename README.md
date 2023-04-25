@@ -1,6 +1,6 @@
 0x011.c printf group prject
 
-Team Members
+Team Members:
 Alula Bezabeh
 And
 Hiruy Zemichael
