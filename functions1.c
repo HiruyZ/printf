@@ -1,4 +1,5 @@
 #include "main.h"
+/************************* PRINT UNSIGNED NUMBER *************************/
 
 /**
  * print_hexadecimal - Prints unsigned number in hexadecimal notation
@@ -17,6 +18,8 @@ int print_hexadecimal(va_list types, char buffer[],
 		flags, 'x', width, precision, size));
 }
 
+/************* PRINT UNSIGNED NUMBER IN OCTAL  ****************/
+
 /**
  * print_hexa_upper - Prints unsigned number in upper hexadecimal notation
  * @types: Lista of arguments
@@ -33,6 +36,7 @@ int print_hexa_upper(va_list types, char buffer[],
 	return (print_hexa(types, "0123456789ABCDEF", buffer,
 		flags, 'X', width, precision, size));
 }
+/************** PRINT UNSIGNED NUMBER IN HEXADECIMAL **************/
 
 /**
  * print_unsigned - Prints unsigned number
