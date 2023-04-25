@@ -111,7 +111,7 @@ int print_int(va_list types, char buffer[],
 		num /= 10;
 	}
 
-	i++;
+	x++;
 
 	return (write_number(is_negative, x, buffer, flags, width, precision, size));
 }
@@ -149,7 +149,7 @@ int print_binary(va_list types, char buffer[],
 	}
 	for (x = 0, sum = 0, count = 0; x < 32; x++)
 	{
-		sum += a[i];
+		sum += a[x];
 		if (sum || x == 31)
 		{
 			char z = '0' + a[x];

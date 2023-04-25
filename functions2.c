@@ -33,7 +33,7 @@ int print_reverse(va_list types, char buffer[],
 	for (x = 0; str[x]; x++)
 		;
 
-	for (x = i - 1; x >= 0; x--)
+	for (x = x - 1; x >= 0; x--)
 	{
 		char z = str[x];
 
@@ -72,13 +72,13 @@ int print_rot13string(va_list types, char buffer[],
 
 	if (str == NULL)
 		str = "(AHYY)";
-	for (x = 0; str[x]; i++)
+	for (x = 0; str[x]; x++)
 	{
 		for (y = 0; in[y]; y++)
 		{
 			if (in[y] == str[x])
 			{
-				a = out[j];
+				a = out[y];
 				write(1, &a, 1);
 				count++;
 				break;
@@ -170,7 +170,7 @@ int print_non_printable(va_list types, char buffer[],
 	while (str[x] != '\0')
 	{
 		if (is_printable(str[x]))
-			buffer[i + offset] = str[x];
+			buffer[x + offset] = str[x];
 		else
 			offset += append_hexa_code(str[x], buffer, x + offset);
 
